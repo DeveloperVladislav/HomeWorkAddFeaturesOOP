@@ -103,6 +103,34 @@
 			Human human = new Human("Name", 29);
 			Console.Write($"My name is {human.Name} and ");
 			human.Eat();
+
+			Console.WriteLine();
+			Console.WriteLine("------------AnonType--------------");
+			Console.WriteLine();
+
+			Person person = new Person("Vlad");
+			int age = 31;
+			var person1 = new { person.Name, age };
+			Console.WriteLine(person1);
+
+			Console.WriteLine();
+			Console.WriteLine("------------Кортежи--------------");
+			Console.WriteLine();
+
+			var turple = (5, 10);//неявное указание типа
+			Console.WriteLine(turple.Item1);
+			(int, int) turple1 = (5, 10);//явное указание
+			Console.WriteLine(turple1.Item1);
+			(int, string, double) turple2 = (13, "hello", 1.3);			
+     		Console.WriteLine(turple2.Item2);
+
+			Console.WriteLine();
+			Console.WriteLine("------------Records--------------");
+			Console.WriteLine();
+
+			var person3 = new Person("Tom");
+			/*person3.Name = "Bob";*/ // ошибка, т к class Person является с ключевым словом рекорд и в свойстве Name имеет ключевое слово init
+			Console.WriteLine(person3.Name);
 		}
 	}
 }
